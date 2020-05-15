@@ -11,7 +11,7 @@ module.exports = {
 			directory: './data/migrations', // put migrations here
 		},
 		seeds: {
-			directory: './database/seeds', // put seeds here
+			directory: './data/seeds', // put seeds here
 		},
 		pool: {
 			afterCreate: (conn, done) => {
