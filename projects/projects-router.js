@@ -15,28 +15,9 @@ router.get('/', (req, res) => {
 			});
 		});
 });
-//get projects by id
-// router.get('/:id', (req, res) => {
-// 	const { id } = req.params;
-// 	Project.getProjectsById(id)
-// 		.then((project) => {
-// 			if (id) {
-// 				res.status(200).json(project);
-// 			} else {
-// 				res.status(404).json({ Message: 'No project with that id' });
-// 			}
-// 		})
-// 		.catch((err) => {
-// 			console.log(err);
-// 			res.status(500).json({
-// 				Message: 'No project information can be found',
-// 			});
-// 		});
-// });
 
 //get all resources for a project
 router.get('/resources', (req, res) => {
-	const id = req.params.id;
 	Project.getResources()
 		.then((resources) => {
 			res.status(200).json(resources);

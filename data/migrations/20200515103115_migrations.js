@@ -9,7 +9,7 @@ exports.up = function (knex) {
 		.createTable('tasks', (tbl) => {
 			//belongs to one projects
 			tbl.increments(); //unique id
-			tbl.string('name', 70).notNullable();
+			// tbl.string('name', 70).notNullable();
 			tbl.string('description').notNullable();
 			tbl.string('notes');
 			tbl
@@ -19,7 +19,7 @@ exports.up = function (knex) {
 				.unsigned() //not negative
 				.notNullable()
 				.references('id')
-				.inTable('poject')
+				.inTable('project')
 				.onDelete('CASCADE')
 				.onUpdate('CASCADE');
 		})
